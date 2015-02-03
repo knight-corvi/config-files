@@ -1,0 +1,521 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Co",
+				"Color_Off"
+			],
+			[
+				"co",
+				"comp_f"
+			],
+			[
+				"pre",
+				"prev_view"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 186.0,
+		"selected_items":
+		[
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"save",
+				"Project: Save As"
+			],
+			[
+				"pre",
+				"Preferences: Settings - User"
+			],
+			[
+				"color",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"colorsubli",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"isnta",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"usr",
+				"Preferences: Settings - User"
+			],
+			[
+				"de",
+				"Preferences: Settings - Default"
+			],
+			[
+				"instaa",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"bro",
+				"Colorsublime: Browse Themes"
+			],
+			[
+				"inst",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pand",
+				"Pandoc: Convert a Pandoc file to PDF"
+			],
+			[
+				"pna",
+				"Pandoc"
+			],
+			[
+				"pandoc",
+				"Pandoc"
+			],
+			[
+				"pando",
+				"Pandoc"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Pandoc"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"Pando",
+				"Pandoc"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"chea",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"close",
+				"Project: Close"
+			],
+			[
+				"extend",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"previ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"cheat",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"push",
+				"Git: Push Current Branch"
+			],
+			[
+				"quik",
+				"Git: Quick Commit"
+			],
+			[
+				"quick",
+				"Git: Quick Commit"
+			],
+			[
+				"folder",
+				"Project: Add Folder"
+			],
+			[
+				"mini",
+				"View: Toggle Minimap"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"she",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"shell",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"bas",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"pres",
+				"Preferences: Settings - User"
+			],
+			[
+				"prefe",
+				"Preferences: Settings - Default"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown Extended"
+			]
+		],
+		"width": 561.0
+	},
+	"console":
+	{
+		"height": 148.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/artorias/.settings"
+	],
+	"file_history":
+	[
+		"/home/artorias/.settings/README.md",
+		"/home/artorias/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/artorias/.settings/sublime-user.sublime-settings",
+		"/home/artorias/Downloads/dataurl.txt",
+		"/home/artorias/.bashrc",
+		"/home/artorias/.Xresources",
+		"/home/artorias/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/artorias/Documents/School/cse/cse165/README.md",
+		"/home/artorias/Documents/School/other-classes/wri119/local_relay_chat.md",
+		"/home/artorias/Documents/School/other-classes/wri119/reading_assignment_01.md",
+		"/home/artorias/Documents/School/other-classes/engr180/Labs/Lab5/Patch_Gap.csv",
+		"/home/artorias/Documents/School/other-classes/engr180/Labs/Lab5/Points.csv",
+		"/home/artorias/.config/sublime-text-3/Packages/Pandoc/Pandoc.sublime-settings",
+		"/home/artorias/Documents/School/other-classes/engr180/Labs/Lab5/WritingMyFirstFile.csv",
+		"/home/artorias/Documents/School/cse/cse177/code/makefile",
+		"/home/artorias/Downloads/makefile.txt",
+		"/home/artorias/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/home/artorias/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+		"/home/artorias/Documents/School/other-classes/soc001/rq_w10.md",
+		"/home/artorias/Documents/School/other-classes/engr180/Labs/Lab10/lab10_jmendez35_100191106.odt",
+		"/home/artorias/Documents/School/other-classes/engr180/ucmclassfinder.info/models/library.dae",
+		"/home/artorias/Documents/School/other-classes/engr180/Lecture/ExampleHeader.py",
+		"/home/artorias/Documents/School/wri119/local_relay_chat.md",
+		"/home/artorias/Documents/School/wri119/reading_assignment_01.md",
+		"/home/artorias/Documents/School/notes/engr155/Notes.md",
+		"/home/artorias/Documents/School/notes/engr155/compound_interest.py",
+		"/home/artorias/.config/sublime-text-3/Packages/WordCount/WordCount.sublime-settings",
+		"/home/artorias/Documents/School/engr155/notes/Notes.md",
+		"/home/artorias/video_capture.txt",
+		"/home/artorias/Documents/co-op_donna.txt",
+		"/home/artorias/Documents/School/cse177/project/20140120-notes.txt",
+		"/home/artorias/Documents/School/cse177/project/.gitignore",
+		"/home/artorias/Downloads/Schedule.time",
+		"/home/artorias/Downloads/SecureW2_JoinNow.py",
+		"/home/artorias/Documents/Projects/envelope/src/Envelope.vala",
+		"/home/artorias/Documents/Projects/envelope/src/view/BudgetOverview.vala",
+		"/home/artorias/Documents/Projects/envelope/src/dialog/AddCategoryDialog.vala",
+		"/home/artorias/Documents/Projects/envelope/src/dialog/AddAccountDialog.vala",
+		"/home/artorias/classes_for_mona.txt",
+		"/tmp/yaourt-tmp-artorias/aur-python2-socksipy-git/PKGBUILD",
+		"/run/media/artorias/Transcend/Storage/Back up/Documents/HEC-RAS/NEWEST/CrossDitch2.p01",
+		"/run/media/artorias/Transcend/Storage/Back up/Documents/HEC-RAS/NEWEST/CrossDitch2.O02",
+		"/usr/share/applications/sublime_text_3.desktop",
+		"/opt/sublime_text_3/sublime_text.desktop",
+		"/opt/sublime_text_3/sublime.py",
+		"/usr/share/applications/org.gnome.gedit.desktop",
+		"/usr/share/applications/chromium.desktop",
+		"/home/artorias/Documents/Projects/envelope/build/src/=0.3.0",
+		"/home/artorias/Documents/Projects/envelope/build/src/view/BudgetOverview.c",
+		"/tmp/yaourt-tmp-artorias/aur-envelope-git/src/envelope/src/dialog/AddAccountDialog.vala",
+		"/tmp/yaourt-tmp-artorias/aur-envelope-git/src/envelope/src/view/BudgetOverview.vala",
+		"/tmp/yaourt-tmp-artorias/aur-envelope-git/envelope.install",
+		"/tmp/yaourt-tmp-artorias/aur-envelope-git/PKGBUILD",
+		"/tmp/yaourt-tmp-artorias/aur-gnome-calendar/gnome-calendar.install",
+		"/tmp/yaourt-tmp-artorias/aur-gnome-calendar/PKGBUILD",
+		"/home/artorias/Dropbox/pass.txt",
+		"/home/artorias/Dropbox/psss",
+		"/run/media/artorias/Transcend/Storage/wep",
+		"/home/artorias/Dropbox/wep",
+		"/home/artorias/Dropbox/HEC-RAS/Latex/Presentation.tex",
+		"/home/artorias/Documents/cse100/HW/hw2.py",
+		"/home/artorias/Documents/cse100/PlotRuntime.m",
+		"/home/artorias/Dropbox/Book/lab_faq.txt",
+		"/usr/lib/systemd/user/btsync.service",
+		"/usr/lib/systemd/user/dropbox.service",
+		"/run/media/artorias/Transcend/Storage/Back up/Videos/Series/Archer.Complete/Extras/ArcherReadMe.txt",
+		"/run/media/artorias/Transcend/Storage/Back up/Videos/Series/Archer.Complete/Extras/CreateFolders.txt",
+		"/home/artorias/btsync.conf",
+		"/home/artorias/.cache/.fr-qP2yTY/go-for-it-git/go-for-it.install",
+		"/tmp/yaourt-tmp-artorias/aur-holdingnuts/PKGBUILD",
+		"/home/artorias/.cache/.fr-Z15GgM/go-for-it-git/PKGBUILD",
+		"/tmp/yaourt-tmp-artorias/aur-holdingnuts/holdingnuts.install",
+		"/home/artorias/.cache/.fr-xrQaTQ/plank-bzr/PKGBUILD",
+		"/home/artorias/.cache/.fr-D6bljr/plank-bzr/plank.install",
+		"/home/artorias/.cache/.fr-KrKTrk/plank-bzr/plank.install",
+		"/home/artorias/.cache/.fr-hPxjd4/go-for-it-git/PKGBUILD",
+		"/home/artorias/.cache/.fr-W9yifS/go-for-it-git/.AURINFO",
+		"/home/artorias/.cache/.fr-h9hylK/go-for-it-git/.SRCINFO",
+		"/home/artorias/.cache/.fr-mhyOtY/go-for-it-git/go-for-it.install",
+		"/home/artorias/.cache/.fr-vAcUAa/go-for-it-bzr/PKGBUILD",
+		"/home/artorias/.cache/.fr-vCUuFW/go-for-it-bzr/.AURINFO",
+		"/home/artorias/.cache/.fr-AsfOe1/go-for-it-bzr/go-for-it.install",
+		"/tmp/yaourt-tmp-artorias/aur-captiva-icons-git/PKGBUILD",
+		"/tmp/yaourt-tmp-artorias/aur-compass-icon-theme/PKGBUILD",
+		"/tmp/yaourt-tmp-artorias/aur-aura-wallpapers/PKGBUILD",
+		"/tmp/yaourt-tmp-artorias/aur-archlinux-artwork/PKGBUILD",
+		"/tmp/yaourt-tmp-artorias/aur-aura-wallpapers/aura-wallpapers.install",
+		"/run/media/artorias/Transcend/Storage/UCM Printer",
+		"/run/media/artorias/Transcend/Storage/VPN UCMERCED",
+		"/run/media/artorias/Transcend/Storage/PSPRT",
+		"/home/artorias/.local/share/todo.txt/todo.txt",
+		"/usr/lib/systemd/system/xboxdrv.service",
+		"/tmp/yaourt-tmp-artorias/aur-geis/PKGBUILD",
+		"/home/artorias/response to cal grant.txt",
+		"/home/artorias/.cache/.fr-GhBasp/color_swatches/read_me.txt",
+		"/home/artorias/Downloads/balance.aspx",
+		"/home/artorias/.config/inkscape/palettes/Material Palette.ase",
+		"/tmp/yaourt-tmp-artorias/aur-go-for-it-git/PKGBUILD",
+		"/home/artorias/.Almin-Soft/ssx/ssx.conf",
+		"/home/artorias/Downloads/bashrc",
+		"/home/artorias/test.sh",
+		"/boot/grub/themes/Antergos-Default/install.sh",
+		"/home/artorias/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/artorias/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/boot/grub/themes/starfield/README",
+		"/tmp/yaourt-tmp-artorias/aur-wtftw-git/wtftw.install",
+		"/tmp/yaourt-tmp-artorias/aur-cargo-git/PKGBUILD",
+		"/tmp/yaourt-tmp-artorias/aur-wtftw-git/PKGBUILD",
+		"/home/artorias/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/artorias/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+		"/home/artorias/Downloads/zukitre_by_lassekongo83-d846if9/ZukiShell/gnome-shell/gnome-shell.css",
+		"/tmp/yaourt-tmp-artorias/aur-railway-sans-font-git/install",
+		"/tmp/yaourt-tmp-artorias/aur-nautilus-dropbox/nautilus-dropbox.install",
+		"/tmp/yaourt-tmp-artorias/aur-california/california.install",
+		"/tmp/yaourt-tmp-artorias/aur-california/PKGBUILD",
+		"/tmp/yaourt-tmp-artorias/aur-libgcrypt15/PKGBUILD",
+		"/tmp/yaourt-tmp-artorias/aur-spotify/spotify.install",
+		"/run/media/artorias/Transcend/Storage/Back up/Documents/co-op_donna.txt",
+		"/tmp/yaourt-tmp-artorias/aur-spotify/PKGBUILD"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"font",
+			"*col",
+			"1;34",
+			"\\033",
+			"1;32",
+			"3[01",
+			"033",
+			"default",
+			"save",
+			".xalign",
+			"xalign",
+			"balance_label.xalign",
+			".xalign",
+			"xalign",
+			"type_label.xalign",
+			".xalign",
+			"xali",
+			"gtk.label",
+			"remaining_value_label",
+			"inflow_value_label",
+			"category_label",
+			"prev_view_in_stack",
+			"pageup",
+			"show",
+			"minimap"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 86.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 86.0
+	},
+	"output.markdown":
+	{
+		"height": 0.0
+	},
+	"project": "settings.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"re",
+				"README.md"
+			],
+			[
+				"reve",
+				"lab01/reverse_order/reverse.cpp"
+			],
+			[
+				"wri11",
+				"wri119/reading_assignment_01.md"
+			],
+			[
+				"wri",
+				"wri119/local_relay_chat.md"
+			],
+			[
+				"",
+				"Schedule.time"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/School/cse/cse165/cse165_labs.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 177.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
