@@ -78,6 +78,27 @@ On_IPurple='\e[0;105m'  # Purple
 On_ICyan='\e[0;106m'    # Cyan
 On_IWhite='\e[0;107m'   # White
 
+# Functions
+get_dir(){
+    printf "%s" $(pwd | sed "s:$HOME:~:")
+}
+
+get_sha(){
+    git rev_parse --short HEAD 2>/dev/null
+}
+
+source /usr/share/git/completion/git-completion.bash
+source /usr/share/git/completion/git-prompt.sh
+
+# Variables for git_prompt
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+# Explicitly unset color (default anyhow). Use 1 to set it.
+export GIT_PS1_SHOWCOLORHINTS=true
+export GIT_PS1_DESCRIBE_STYLE="branch"
+export GIT_PS1_SHOWUPSTREAM="auto git"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -134,20 +155,24 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ];    then
-    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    # PS1='${debian_chroot:+($debian_chroot)}\['$BYellow'\]\u@\h\['$Color_Off'\]:\['$BBlue'\]\w\['$Color_Off'\]\$ '
-    PS1='\['$BPurple'\]\W \['$BYellow'\]\$ >'$Color_Off
+    # ps1_pre_git="\["$BPurple"\]\W\["$Color_Off"\]"
+    ps1_pre_git="\[\e[1;35m\]\W\[\e[0m\]"
+    # ps1_pre_git="\["$BPurple"\]\W\["$Color_Off"\]"
+    ps1_post_git="\[\e[1;33m\]\\\$ >\[\e[0m\]"
+    ps1_git="\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"
+    PROMPT_COMMAND='__git_ps1 "${ps1_pre_git}" "${ps1_post_git}" ""'
 else
     # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     PS1='\u@\h:\w\$ '
 fi
+
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    # PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    # PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PROMPT_COMMAND='printf "\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
+    __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
     ;;
 *)
     ;;
@@ -193,7 +218,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-
 
 export EDITOR="subl3"
