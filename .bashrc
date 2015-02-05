@@ -155,11 +155,12 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ];    then
-    # ps1_pre_git="\["$BPurple"\]\W\["$Color_Off"\]"
-    ps1_pre_git="\[\e[1;35m\]\W\[\e[0m\]"
-    # ps1_pre_git="\["$BPurple"\]\W\["$Color_Off"\]"
-    ps1_post_git="\[\e[1;33m\]\\\$ >\[\e[0m\]"
-    ps1_git="\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"
+    ps1_pre_git="\["$BPurple"\]\W\["$Color_Off"\]"
+    # ps1_pre_git="\[\e[1;35m\]\W\[\e[0m\]"
+    ps1_post_git="\["$BYellow"\]\\\$ >\["$Color_Off"\]"
+    # ps1_post_git="\[\e[1;33m\]\\\$ >\[\e[0m\]"
+    # ps1_git="\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"
+    ps1_git="\["$BCyan"\][%s $(get_sha)\["$BCyan"]\]"
     PROMPT_COMMAND='__git_ps1 "${ps1_pre_git}" "${ps1_post_git}" ""'
 else
     # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
