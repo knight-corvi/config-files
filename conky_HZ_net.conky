@@ -1,0 +1,56 @@
+##############################################
+# Settings
+##############################################
+alignment bottom_right
+background no
+use_xft yes
+xftfont Megrim:bold:size=9
+xftalpha 0.1
+update_interval 0.5
+total_run_times 0
+own_window yes
+own_window_class Conky
+own_window_transparent yes
+own_window_type normal
+own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual yes
+own_window_argb_value 0
+double_buffer yes
+minimum_size 0 0
+maximum_width 400
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color ffffff
+default_shade_color 000000
+default_outline_color 656667
+alignment top_right
+gap_x 15
+gap_y 15
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+use_spacer yes
+
+##############################################
+# Colors
+##############################################
+# Icon
+color0 57D296
+# Title
+color1 35B2C7
+# HR
+color2 76624D
+# Text
+color3 E4D6D4
+# Inside Bar, Graph
+color4 D7E9A4
+
+##############################################
+# Output
+##############################################
+TEXT
+${color0}${font Icons:size=14} ${color1}${font Megrim:bold:size=10}NET ${font}${color3}eth: ${upspeed enp2s0}:${downspeed enp2s0} wlan: ${upspeed wlp3s0}:${downspeed wlp3s0}

@@ -68,6 +68,7 @@ ${color3}${uid_name 1000}${alignr}${nodename}
 ${sysname} ${kernel}${alignr}${machine}
 # ${alignc}${exec lscpu | grep -i "model name" | cut -c 24-}
 Uptime:${alignr}${uptime}
+
 #############
 # CPU
 #############
