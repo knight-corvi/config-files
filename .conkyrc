@@ -1,0 +1,124 @@
+##############################################
+# Settings
+##############################################
+background no
+use_xft yes
+xftfont Megrim:bold:size=9
+xftalpha 0.1
+update_interval 0.5
+total_run_times 0
+own_window yes
+own_window_class Conky
+own_window_transparent yes
+own_window_type normal
+own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual yes
+own_window_argb_value 0
+double_buffer yes
+minimum_size 0 0
+maximum_width 400
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color ffffff
+default_shade_color 000000
+default_outline_color 656667
+alignment top_right
+gap_x 15
+gap_y 15
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+use_spacer yes
+
+##############################################
+# Colors
+##############################################
+# Icon
+color0 57D296
+# Title
+color1 35B2C7
+# HR
+color2 76624D
+# Text
+color3 E4D6D4
+# Inside Bar, Graph
+color4 D7E9A4
+
+##############################################
+# Output
+##############################################
+TEXT
+#############
+# Time
+#############
+#${font Icons:size=20}${alignc}${font Megrim:size=14} antergos ${font}
+${color1}${font Megrim:size=24}$alignc${time %l:%M %P}$color
+${voffset -15}${font Megrim:bold:size=10}$alignc${time %a %d %b %Y}
+# ${font Megrim:bold:size=12}$alignc${time %c}
+
+#############
+# System
+#############
+${color0}${font Icons:size=14} ${color1}${font Megrim:bold:size=10}SYSTEM ${font}${color2}${stippled_hr 2}
+${color3}${uid_name 1000}${alignr}${nodename}
+${sysname} ${kernel}${alignr}${machine}
+# ${alignc}${exec lscpu | grep -i "model name" | cut -c 24-}
+Uptime:${alignr}${uptime}
+#############
+# CPU
+#############
+${color0}${font Icons:size=14} ${color1}${font Megrim:bold:size=10}PROCESSES ${color2}${font}${stippled_hr 2}
+${color3}CPU:${alignr}${cpu cpu0}%
+Processes: ${processes}${alignr}Running:${running_processes}
+# ${cpugauge}
+# ${cpugraph}
+${cpubar}
+${top name 1}${alignr}${top cpu 1}%
+${top name 2}${alignr}${top cpu 2}%
+${top name 3}${alignr}${top cpu 3}%
+${top name 4}${alignr}${top cpu 4}%
+#############
+# MEM
+#############
+${color0}${font Icons:size=14} ${color1}${font Megrim:bold:size=10}MEMORY ${color2}${font}${stippled_hr 2}
+${color3}MEM:${alignc}${mem}/${memmax}${alignr}${memperc}%
+${membar}
+SWAP:${alignc}${swap}/${swapmax}${alignr}${swapperc}%
+${swapbar}
+${top_mem name 1}${alignr}${top_mem pid 1}${alignc}${top_mem mem 1}%
+${top_mem name 2}${alignr}${top_mem pid 2}${alignc}${top_mem mem 2}%
+${top_mem name 3}${alignr}${top_mem pid 3}${alignc}${top_mem mem 3}%
+${top_mem name 4}${alignr}${top_mem pid 4}${alignc}${top_mem mem 4}%
+#############
+# HDD
+#############
+${color0}${font Icons:size=14} ${color1}${font Megrim:bold:size=10}HDD ${color2}${font}${stippled_hr 2}
+${color3}${fs_used /}/${fs_size /}${alignr}${fs_used_perc /}%
+${fs_bar /}
+Read${alignr}Write
+${diskiograph_read 20, 75}${alignr}${diskiograph_write 20, 75}
+${diskio_read}${alignr}${diskio_write}
+#############
+# NETWORK
+#############
+${color0}${font Icons:size=14} ${color1}${font Megrim:bold:size=10}NETWORK ${color2}${font}${stippled_hr 2}
+${color3}# IPv6$alignr${execi 300 wget -O - http://wtfismyip.com/text | tail}
+IPv4$alignr${execi 300 wget -O - http://ipv4.wtfismyip.com/text | tail}
+Wired: ${font Icons:size=10}$font Up:${upspeed enp2s0}${alignr}${font Icons:size=10}$font Down: ${downspeed enp2s0}
+#${upspeedgraph enp2s0 20, 130}${alignr}${downspeedgraph enp2s0 20, 130}
+Wi-Fi: ${font Icons:size=10}$font Up: ${upspeed wlp3s0}${alignr}${font Icons:size=10}$font Down: ${downspeed wlp3s0}
+#${upspeedgraph wlp3s0 20, 130}${alignr}${downspeedgraph wlp3s0 20, 130}
+#############
+# Music - Test
+#############
+#( S P O T I F Y)${if_running spotify}
+#${execi 3 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 1 "title"|egrep -v "title"|cut -b 44-|cut -d '"' -f 1|egrep -v ^$ }
+#${color white}${execi 3 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 1 "title"|egrep -v "title"|cut -b 44-|cut -d '"' -f 1|egrep -v ^$ }${color 1793D2}
+#${color white}${execi 3 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 2 "artist"|egrep -v "artist"|egrep -v "array"|cut -b 27-|cut -d '"' -f 1|egrep -v ^$ }${color 1793D2}
+#${color white}${execi 3 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 1 "album"|egrep -v "album"|cut -b 44-|cut -d '"' -f 1|egrep -v ^$ }${color 1793D2}
+
+

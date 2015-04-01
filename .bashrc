@@ -221,3 +221,4 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR="subl3"
+export PATH="home/artorias/.gem/ruby/2.2.0/bin":${PATH}
