@@ -220,5 +220,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="subl3"
+export EDITOR="gedit"
+export FREEGLUT="/home/artorias/Documents/School/cse/cse165/lab06/08_plot_graphical_objects"
+export GRPPRJ="/home/artorias/Documents/School/cse/group_project"
 export PATH="home/artorias/.gem/ruby/2.2.0/bin":${PATH}

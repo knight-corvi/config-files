@@ -1,7 +1,7 @@
 ##############################################
 # Settings
 ##############################################
-alignment bottom_right
+alignment bottom_left
 background no
 use_xft yes
 xftfont Megrim:bold:size=9

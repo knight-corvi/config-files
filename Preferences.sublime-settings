@@ -45,12 +45,18 @@
 		"Vintage",
 		"Theme - Soda"
 	],
+	"indent_guide_options":
+	[
+		"draw_active"
+	],
+	"margin": 0,
 	"overlay_scroll_bars": "enabled",
 	"rulers":
 	[
 		80,
 		100
 	],
+	"spell_check": true,
 	"tab_size": 4,
 	"theme": "Piatto Dark 3.sublime-theme",
 	"translate_tabs_to_spaces": true,
