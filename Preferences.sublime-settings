@@ -1,7 +1,9 @@
 {
 	"bold_folder_labels": true,
 	"caret_style": "phase",
+	"color_scheme": "Packages/Seti_UI/Scheme/Seti.tmTheme",
 	"color_scheme": "Packages/Colorsublime - Themes/1337.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"copy_with_empty_selection": false,
 	"create_window_at_startup": false,
 	"ensure_newline_at_eof_on_save": true,
@@ -58,7 +60,7 @@
 	],
 	"spell_check": true,
 	"tab_size": 4,
-	"theme": "Piatto Dark 3.sublime-theme",
+	"theme": "Seti.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
