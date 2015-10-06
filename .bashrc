@@ -172,8 +172,15 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PROMPT_COMMAND='printf "\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
-    __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
+    # PROMPT_COMMAND='printf "\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
+    # __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
+    if [ $XDG_SESSION_DESKTOP == "i3" ]; then
+        PROMPT_COMMAND='printf "\e[5 q \033]0;$USER@$HOSTNAME:$(get_dir)\007";\
+        __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
+    else
+        PROMPT_COMMAND='printf "\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
+        __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
+    fi
     ;;
 *)
     ;;
@@ -221,6 +228,8 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR="gedit"
-export FREEGLUT="/home/artorias/Documents/School/cse/cse165/lab06/08_plot_graphical_objects"
-export GRPPRJ="/home/artorias/Documents/School/cse/group_project"
+export SAL_USE_VCLPLUGIN=gtk3 lowriter
+# export SAL_USE_VCLPLUGIN=gtk3 lowriter
+# export FREEGLUT="/home/artorias/Documents/School/cse/cse165/lab06/08_plot_graphical_objects"
+# export GRPPRJ="/home/artorias/Documents/School/cse/group_project"
 export PATH="home/artorias/.gem/ruby/2.2.0/bin":${PATH}
