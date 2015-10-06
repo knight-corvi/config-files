@@ -175,7 +175,7 @@ xterm*|rxvt*)
     # PROMPT_COMMAND='printf "\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
     # __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
     if [ $XDG_SESSION_DESKTOP == "i3" ]; then
-        PROMPT_COMMAND='printf "\e[5 q \033]0;$USER@$HOSTNAME:$(get_dir)\007";\
+        PROMPT_COMMAND='printf "\e[5 q\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
         __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
     else
         PROMPT_COMMAND='printf "\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
