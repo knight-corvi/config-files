@@ -19,13 +19,14 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
-font pango:monoone 10
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -37,11 +38,11 @@ bindsym $mod+Shift+q kill
 # installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+# change focus -- rather use arrow keys
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -49,11 +50,11 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+# move focused window -- rather use arrow keys
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -147,21 +148,82 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Volume
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-source-output-volume 0 -- +10% && killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && killall -SIGUSR1 i3status
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-source-output-volume 0 -- -10% && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && killall -SIGUSR1 i3status
+########################
+#### My Configuration
+########################
+
+#Fonts
+font pango:monoone 10
+
+#Terminal
+bindsym $mod+Return exec gnome-terminal
+
+# Volume key control
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master playback 5%+ unmute && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec amixer -q sset Master playback 5%- unmute && killall -SIGUSR1 i3status
+# For some reasons toggle other weird channels other than Master as well
+bindsym XF86AudioMute exec amixer -q sset Master playback toggle && killall -SIGUSR1 i3status
+
+
+
+#Edges
+hide_edge_borders both
+
+#Window Decorations
+client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
+client.focused_inactive #333333 #5F676A #ffffff #484e50
+client.unfocused        #333333 #424242 #888888 #292d2e
+client.urgent           #C10004 #900000 #ffffff #900000
+
+#Printscreen
+bindsym Print exec gnome-screenshot --interactive
+
+#Lock Screen
+bindsym $mod+l exec i3lock
+
+#Suspend
+#bindsym XF86Sleep
+
+#RhythmBox Control
+bindsym XF86AudioPlay exec rhythmbox-client --play-pause
+bindsym XF86AudioNext exec rhythmbox-client --next
+bindsym XF86AudioPrev exec rhythmbox-client --previous
+bindsym XF86AudioStop exec rhythmbox-client --stop
 
 # Start up Programs
-        ##Wallpapers
+    ##Wallpapers
 #exec --no-startup-id nitrogen --restore
 exec --no-startup-id feh --bg-fill Pictures/Abstract/Linux_2014_dark_logo_notext_2560x1600.png
-        # Network Manager
+
+    # Network Manager
 exec --no-startup-id nm-applet
+
+    # Sound Applet
+exec --no-startup-id gnome-sound-applet
+
+    # Restore GNOME's settings
+exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
+
+    # Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/
+    # creating-a-modern-tiling-desktop-environment-using-i3/
+exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command i3status --config ~/.config/i3/i3status.conf
+        colors{
+        background #232323
+        statusline #DCDCDC
+
+        #class             border  background text
+        #focused_workspace  #43A3B1 #5BBDCC #151C2E
+        #active_workspace   #43A3B1 #5BBDCC #151C2E
+        #inactive_workspace #5BBDCC #151C2E #5BBDCC
+        #urgent_workspace   #2f343a #900000 #ffffff
+    }
 }
+
+
+# References
+# https://github.com/hdra/i3-config/blob/master/.i3/config

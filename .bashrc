@@ -228,8 +228,11 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR="gedit"
+export LESSOPEN="|lesspipe.sh %s"
+export LESS='-R '
 export SAL_USE_VCLPLUGIN=gtk3 lowriter
 # export SAL_USE_VCLPLUGIN=gtk3 lowriter
 # export FREEGLUT="/home/artorias/Documents/School/cse/cse165/lab06/08_plot_graphical_objects"
 # export GRPPRJ="/home/artorias/Documents/School/cse/group_project"
 export PATH="home/artorias/.gem/ruby/2.2.0/bin":${PATH}
+export GPGKEY=08D77929
