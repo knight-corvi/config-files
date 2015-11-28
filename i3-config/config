@@ -99,6 +99,16 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+bindsym $mod+KP_1 workspace 1
+bindsym $mod+KP_2 workspace 2
+bindsym $mod+KP_3 workspace 3
+bindsym $mod+KP_4 workspace 4
+bindsym $mod+KP_5 workspace 5
+bindsym $mod+KP_6 workspace 6
+bindsym $mod+KP_7 workspace 7
+bindsym $mod+KP_8 workspace 8
+bindsym $mod+KP_9 workspace 9
+bindsym $mod+KP_0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -164,16 +174,22 @@ bindsym XF86AudioLowerVolume exec amixer -q sset Master playback 5%- unmute && k
 # For some reasons toggle other weird channels other than Master as well
 bindsym XF86AudioMute exec amixer -q sset Master playback toggle && killall -SIGUSR1 i3status
 
-
+# Detecting Monitors
+exec --no-startup-id autoxrandr
+# Credit to:
+##########
+# https://faq.i3wm.org/question/2332/flexible-monitor-setup/?answer=3575#post-id-3575
+##########
 
 #Edges
 hide_edge_borders both
 
 #Window Decorations
-client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
-client.focused_inactive #333333 #5F676A #ffffff #484e50
-client.unfocused        #333333 #424242 #888888 #292d2e
-client.urgent           #C10004 #900000 #ffffff #900000
+# class                 border  backgr. text    indicator
+client.focused          #002B36 #002B36 #93A1A1 #002B36
+client.focused_inactive #073642 #073642 #657B83 #073642
+client.unfocused        #073642 #073642 #657B83 #073642
+client.urgent           #EEE8D5 #EEE8D5 #859900 #EEE8D5
 
 #Printscreen
 bindsym Print exec gnome-screenshot --interactive
@@ -211,16 +227,19 @@ exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/activ
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status --config ~/.config/i3/i3status.conf
-        colors{
-        background #232323
-        statusline #DCDCDC
+    status_command i3status --config ~/.config/i3/i3status.conf
+    tray_padding 2
+    position top
+    font pango: monoOne 9
+    colors{
+        background #073642
+        statusline #93A1A1
 
-        #class             border  background text
-        #focused_workspace  #43A3B1 #5BBDCC #151C2E
-        #active_workspace   #43A3B1 #5BBDCC #151C2E
-        #inactive_workspace #5BBDCC #151C2E #5BBDCC
-        #urgent_workspace   #2f343a #900000 #ffffff
+        #class              border  background text
+        focused_workspace  #586E75 #073642 #93A1A1
+        active_workspace   #586E75 #002B36 #93A1A1
+        inactive_workspace #002B36 #002B36 #839496
+        urgent_workspace   #002B36 #EEE8D5 #002B36
     }
 }
 

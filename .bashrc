@@ -199,7 +199,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -lF'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -234,5 +234,8 @@ export SAL_USE_VCLPLUGIN=gtk3 lowriter
 # export SAL_USE_VCLPLUGIN=gtk3 lowriter
 # export FREEGLUT="/home/artorias/Documents/School/cse/cse165/lab06/08_plot_graphical_objects"
 # export GRPPRJ="/home/artorias/Documents/School/cse/group_project"
-export PATH="home/artorias/.gem/ruby/2.2.0/bin":${PATH}
+export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
+#export PATH="/home/artorias/.gem/ruby/2.2.0/bin":${PATH}
+export PATH=$PATH:$HOME/.local/bin
+#export PATH="/home/artorias/.local/bin":${PATH}
 export GPGKEY=08D77929
