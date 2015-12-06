@@ -86,9 +86,10 @@ get_dir(){
 get_sha(){
     git rev_parse --short HEAD 2>/dev/null
 }
-
-source /usr/share/git/completion/git-completion.bash
-source /usr/share/git/completion/git-prompt.sh
+if [[ -e /usr/share/git/completion ]]; then
+	source /usr/share/git/completion/git-completion.bash
+	source /usr/share/git/completion/git-prompt.sh
+fi
 
 # Variables for git_prompt
 export GIT_PS1_SHOWDIRTYSTATE=true
@@ -174,7 +175,7 @@ case "$TERM" in
 xterm*|rxvt*)
     # PROMPT_COMMAND='printf "\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
     # __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
-    if [ $XDG_SESSION_DESKTOP == "i3" ]; then
+    if [ "$XDG_SESSION_DESKTOP" == "i3" ]; then
         PROMPT_COMMAND='printf "\e[5 q\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
         __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
     else
