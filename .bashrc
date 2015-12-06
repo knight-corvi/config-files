@@ -127,7 +127,7 @@ shopt -s checkwinsize
 #shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+# [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 # if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -229,7 +229,13 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR="gedit"
-export LESSOPEN="|lesspipe.sh %s"
+if [[ -f /usr/bin/lesspipe  ]]; then
+	# export LESSOPEN="|lesspipe %s"
+	export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+elif [[ /usr/bin/lesspipe.sh ]]; then
+	export LESSOPEN="|lesspipe.sh %s"
+fi
+	#statements
 export LESS='-R '
 export SAL_USE_VCLPLUGIN=gtk3 lowriter
 # export SAL_USE_VCLPLUGIN=gtk3 lowriter
