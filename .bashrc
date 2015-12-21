@@ -216,6 +216,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# There are some issues with spotify fonts using infinality
+if [[ -f ~/.fix_spotiy_font ]]; then
+    . ~/.fix_spotiy_font
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
