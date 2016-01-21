@@ -251,3 +251,8 @@ export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
 export PATH=$PATH:$HOME/.local/bin
 #export PATH="/home/artorias/.local/bin":${PATH}
 export GPGKEY=08D77929
+
+# source setup.bash for cse180 class Robotics
+if [[ -f /opt/ros/indigo/setup.bash ]]; then
+    source /opt/ros/indigo/setup.bash
+fi

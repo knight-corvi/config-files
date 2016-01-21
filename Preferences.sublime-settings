@@ -1,7 +1,7 @@
 {
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Colorsublime - Themes/1337.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Solarized-light (SL).tmTheme",
 	"copy_with_empty_selection": false,
 	"create_window_at_startup": false,
 	"ensure_newline_at_eof_on_save": true,
@@ -37,6 +37,7 @@
 		"CVS"
 	],
 	"font_face": "Monoone",
+	"font_size": 11,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -57,7 +58,6 @@
 	],
 	"spell_check": true,
 	"tab_size": 4,
-	"theme": "Seti.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
