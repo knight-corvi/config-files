@@ -219,7 +219,7 @@ fi
 
 # There are some issues with spotify fonts using infinality
 if [[ -f ~/.fix_spotiy_font ]]; then
-    . ~/.fix_spotiy_font
+    . ~/.settings/fix_spotiy_font
 fi
 
 # enable programmable completion features (you don't need to enable
