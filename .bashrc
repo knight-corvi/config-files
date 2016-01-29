@@ -253,6 +253,6 @@ export PATH=$PATH:$HOME/.local/bin
 export GPGKEY=08D77929
 
 # source setup.bash for cse180 class Robotics
-if [[ -f /opt/ros/indigo/setup.bash ]]; then
-    source /opt/ros/indigo/setup.bash
+if [[ -f /opt/ros/indigo/setup.bash ]] && [[ -f $HOME/.config/ros/indigo_startup ]]; then
+    source $HOME/.config/ros/indigo_startup
 fi
