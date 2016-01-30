@@ -11,3 +11,15 @@ NERDTree
 Pathogen
 Solarized
 
+Packages for Sublime:
++ SublimeLinter
+	- sublimelinter-pylint -> don't forget to install python-pylint with it inside the system
++ColorSublime
++Fressia
++Piatto
++CMake
++ColorHighlighter
++Seti_UI
++Seti_UX
+
+	
