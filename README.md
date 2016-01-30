@@ -23,3 +23,5 @@ Packages for Sublime:
 +Seti_UX
 
 	
+If you are using indigo, install indigo and follow the wiki on how to set it up for arch. Take a look where the configuration script is saved "$HOME/.config/ros/indigo_startup"
+
