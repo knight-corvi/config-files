@@ -47,8 +47,11 @@
 	],
 	"indent_guide_options":
 	[
+		"draw_normal",
 		"draw_active"
 	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
 	"margin": 0,
 	"overlay_scroll_bars": "enabled",
 	"piatto_folder_icons": true,
@@ -59,9 +62,10 @@
 	],
 	"spell_check": true,
 	"tab_size": 4,
-	"theme": "Piatto Light 3.sublime-theme",
+	"theme": "Cobalt2.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
+    "sidebar_font_big": true,
 	"word_wrap": false
 }
