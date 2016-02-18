@@ -156,7 +156,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ];    then
-    ps1_pre_git="\["$BPurple"\]\W\["$Color_Off"\]"
+    ps1_pre_git="\["$BPurple"\]\u@\h:\W\["$Color_Off"\]"
     # ps1_pre_git="\[\e[1;35m\]\W\[\e[0m\]"
     ps1_post_git="\["$BYellow"\]\\\$ >\["$Color_Off"\]"
     # ps1_post_git="\[\e[1;33m\]\\\$ >\[\e[0m\]"
