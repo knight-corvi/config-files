@@ -60,7 +60,6 @@
 		80,
 		100
 	],
-	// "sidebar_font_big": true,
 	"spell_check": true,
 	"tab_size": 4,
 	"theme": "Cobalt2.sublime-theme",
