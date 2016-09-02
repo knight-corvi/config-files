@@ -5,6 +5,8 @@
 # ~/.bashrc
 #
 
+. /etc/profile.d/vte.sh
+
 # Reset
 Color_Off='\e[0m'       # Text Reset
 
@@ -158,7 +160,7 @@ fi
 if [ "$color_prompt" = yes ];    then
     ps1_pre_git="\["$BPurple"\]\u@\h:\W\["$Color_Off"\]"
     # ps1_pre_git="\[\e[1;35m\]\W\[\e[0m\]"
-    ps1_post_git="\["$BYellow"\]\\\$ >\["$Color_Off"\]"
+    ps1_post_git="\["$BYellow"\]\\\$ \["$Color_Off"\]"
     # ps1_post_git="\[\e[1;33m\]\\\$ >\[\e[0m\]"
     # ps1_git="\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"
     ps1_git="\["$BCyan"\][%s $(get_sha)\["$BCyan"]\]"
@@ -243,6 +245,10 @@ fi
 	#statements
 export LESS='-R '
 export SAL_USE_VCLPLUGIN=gtk3 lowriter
+
+# For QT5 applications running in wayland.
+export QT_QPA_PLATFORM=wayland-egl
+
 # export SAL_USE_VCLPLUGIN=gtk3 lowriter
 # export FREEGLUT="/home/artorias/Documents/School/cse/cse165/lab06/08_plot_graphical_objects"
 # export GRPPRJ="/home/artorias/Documents/School/cse/group_project"
@@ -256,3 +262,5 @@ export GPGKEY=08D77929
 if [[ -f /opt/ros/indigo/setup.bash ]] && [[ -f $HOME/.config/ros/indigo_startup ]]; then
     source $HOME/.config/ros/indigo_startup
 fi
+
+

@@ -4,6 +4,7 @@
 	"color_scheme": "Packages/User/SublimeLinter/Triplet Lite (SL).tmTheme",
 	"copy_with_empty_selection": false,
 	"create_window_at_startup": false,
+	"default_encoding": "utf-8",
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
