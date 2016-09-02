@@ -260,6 +260,9 @@ export GPGKEY=08D77929
 
 # source setup.bash for cse180 class Robotics
 if [[ -f /opt/ros/indigo/setup.bash ]] && [[ -f $HOME/.config/ros/indigo_startup ]]; then
+    if [[ "$(lsb_release -sc)" == "freya" ]]; then
+        export ROS_OS_OVERRIDE=ubuntu:14.04
+    fi
     source $HOME/.config/ros/indigo_startup
 fi
 
