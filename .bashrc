@@ -5,7 +5,7 @@
 # ~/.bashrc
 #
 
-. /etc/profile.d/vte.sh
+# . /etc/profile.d/vte.sh
 
 # Reset
 Color_Off='\e[0m'       # Text Reset
@@ -266,4 +266,7 @@ if [[ -f /opt/ros/indigo/setup.bash ]] && [[ -f $HOME/.config/ros/indigo_startup
     source $HOME/.config/ros/indigo_startup
 fi
 
+if [[ $TERMINIX_ID ]]; then
+        source /etc/profile.d/vte.sh
+fi
 
