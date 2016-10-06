@@ -10,6 +10,10 @@ if [[ $TERMINIX_ID ]]; then
         source /etc/profile.d/vte.sh
 fi
 
+if [[ -f  /etc/profile.d/perlbin.sh ]]; then
+	source /etc/profile.d/perlbin.sh
+fi
+
 # Reset
 Color_Off='\e[0m'       # Text Reset
 
