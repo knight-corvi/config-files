@@ -5,7 +5,6 @@
 # ~/.bashrc
 #
 
-# . /etc/profile.d/vte.sh
 if [[ $TERMINIX_ID ]]; then
         source /etc/profile.d/vte.sh
 fi
@@ -13,6 +12,17 @@ fi
 if [[ -f  /etc/profile.d/perlbin.sh ]]; then
 	source /etc/profile.d/perlbin.sh
 fi
+
+
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+if [[ "$(lsb_release -is)" == "Arch" ]]; then
+    source /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
+else
+    source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+fi
+
 
 # Reset
 Color_Off='\e[0m'       # Text Reset
@@ -100,15 +110,18 @@ if [[ -e /usr/share/git/completion ]]; then
 	source /usr/share/git/completion/git-prompt.sh
 fi
 
-# Variables for git_prompt
-export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWSTASHSTATE=true
-export GIT_PS1_SHOWUNTRACKEDFILES=true
-# Explicitly unset color (default anyhow). Use 1 to set it.
-export GIT_PS1_SHOWCOLORHINTS=true
-export GIT_PS1_DESCRIBE_STYLE="branch"
-export GIT_PS1_SHOWUPSTREAM="auto git"
+####################### IGNORE WHILE POWERLINE ##############################
+# To be ignored while trying powerline
 
+## Variables for git_prompt
+# export GIT_PS1_SHOWDIRTYSTATE=true
+# export GIT_PS1_SHOWSTASHSTATE=true
+# export GIT_PS1_SHOWUNTRACKEDFILES=true
+## Explicitly unset color (default anyhow). Use 1 to set it.
+# export GIT_PS1_SHOWCOLORHINTS=true
+# export GIT_PS1_DESCRIBE_STYLE="branch"
+# export GIT_PS1_SHOWUPSTREAM="auto git"
+########################### END IGNORE #####################################
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -164,37 +177,61 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ];    then
-    ps1_pre_git="\["$BPurple"\]\u@\h:\W\["$Color_Off"\]"
-    # ps1_pre_git="\[\e[1;35m\]\W\[\e[0m\]"
-    ps1_post_git="\["$BYellow"\]\\\$ \["$Color_Off"\]"
-    # ps1_post_git="\[\e[1;33m\]\\\$ >\[\e[0m\]"
-    # ps1_git="\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"
-    ps1_git="\["$BCyan"\][%s $(get_sha)\["$BCyan"]\]"
-    PROMPT_COMMAND='__git_ps1 "${ps1_pre_git}" "${ps1_post_git}" ""'
-else
-    # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1='\u@\h:\w\$ '
-fi
+###################### TEST POWERLINE ###################################
 
+# if [ "$color_prompt" = yes ];    then
+#     ps1_pre_git="\["$BPurple"\]\u@\h:\W\["$Color_Off"\]"
+#     # ps1_pre_git="\[\e[1;35m\]\W\[\e[0m\]"
+#     ps1_post_git="\["$BYellow"\]\\\$ \["$Color_Off"\]"
+#     # ps1_post_git="\[\e[1;33m\]\\\$ >\[\e[0m\]"
+#     # ps1_git="\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"
+#     ps1_git="\["$BCyan"\][%s $(get_sha)\["$BCyan"]\]"
+#     PROMPT_COMMAND='__git_ps1 "${ps1_pre_git}" "${ps1_post_git}" ""'
+# else
+#     # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+#     PS1='\u@\h:\w\$ '
+# fi
+
+
+# unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+# case "$TERM" in
+# xterm*|rxvt*)
+#     if [ "$XDG_SESSION_DESKTOP" == "i3" ]; then
+#         PROMPT_COMMAND='printf "\e[5 q\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
+#         __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
+#     else
+#         PROMPT_COMMAND='printf "\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
+#         __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
+#     fi
+#     ;;
+# *)
+#     ;;
+# esac
+
+################### END TEST POWERLINE #######################################
+
+######################## DEFAULT UBUNTU #####################################
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    # PROMPT_COMMAND='printf "\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
-    # __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
-    if [ "$XDG_SESSION_DESKTOP" == "i3" ]; then
-        PROMPT_COMMAND='printf "\e[5 q\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
-        __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
-    else
-        PROMPT_COMMAND='printf "\033]0;$USER@$HOSTNAME:$(get_dir)\007";\
-        __git_ps1 "${ps1_pre_git}" "${ps1_post_git}" "\[\e[1;36m\][%s $(get_sha)\[\e[1;36m]\]"'
-    fi
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
     ;;
 esac
+###################### END DEFAULT UBUNTU ###################################
+
+
+
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -244,25 +281,23 @@ fi
 
 export EDITOR="gedit"
 if [[ -f /usr/bin/lesspipe  ]]; then
-	# export LESSOPEN="|lesspipe %s"
 	export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-elif [[ /usr/bin/lesspipe.sh ]]; then
+elif [[ -f /usr/bin/lesspipe.sh ]]; then
 	export LESSOPEN="|lesspipe.sh %s"
 fi
-	#statements
+
+#statements
 export LESS='-R '
-export SAL_USE_VCLPLUGIN=gtk3 lowriter
+#export SAL_USE_VCLPLUGIN=gtk3 lowriter
 
 # For QT5 applications running in wayland.
 export QT_QPA_PLATFORM=wayland-egl
 
-# export SAL_USE_VCLPLUGIN=gtk3 lowriter
 # export FREEGLUT="/home/artorias/Documents/School/cse/cse165/lab06/08_plot_graphical_objects"
 # export GRPPRJ="/home/artorias/Documents/School/cse/group_project"
 export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
 #export PATH="/home/artorias/.gem/ruby/2.2.0/bin":${PATH}
 export PATH=$PATH:$HOME/.local/bin
-#export PATH="/home/artorias/.local/bin":${PATH}
 export GPGKEY=08D77929
 
 # source setup.bash for cse180 class Robotics
