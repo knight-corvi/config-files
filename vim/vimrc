@@ -24,3 +24,4 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+hi MatchParen cterm=bold ctermbg=none ctermfg=none
