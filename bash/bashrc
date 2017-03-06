@@ -289,7 +289,7 @@ fi
 
 #statements
 export LESS='-R '
-#export SAL_USE_VCLPLUGIN=gtk3 lowriter
+export SAL_USE_VCLPLUGIN=gtk3 lowriter
 
 # For QT5 applications running in wayland.
 export QT_QPA_PLATFORM=wayland-egl
