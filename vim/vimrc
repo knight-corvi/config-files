@@ -11,14 +11,30 @@ Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 filetype plugin indent on
-syntax enable
-set background=dark
+" set background=dark
 let g:powerline_pycmd = 'py3'
 "colorscheme solarized"
 set  rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim"
+
+set encoding=utf-8 fileencoding=utf-8 termencoding=utf-8
+set nobackup nowritebackup noswapfile autoread 				" no backup or swap
+set secure 								" disable unsafe comnds
+set wildmenu
+set backspace=indent,eol,start
+set nofoldenable
+set scrolloff=20
+set cursorline
 set laststatus=2
-set t_Co=256
 set number
+" set textwidth=80
+let &colorcolumn=join(range(81,999),",")
+
+" Appearance
+syntax enable
+set t_Co=256
+hi ColorColumn cterm=none ctermfg=none ctermbg=235
+hi MatchParen  cterm=bold ctermfg=none ctermbg=none
+hi CursorLine  cterm=none ctermfg=none ctermbg=238
 
 "" NERDCommenter
 " Add spaces after comment delimiters by default "
@@ -36,4 +52,3 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-hi MatchParen cterm=bold ctermbg=none ctermfg=none

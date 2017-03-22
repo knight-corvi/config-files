@@ -245,16 +245,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -lF'
-alias la='ls -A'
-alias l='ls -CF'
-alias lL='ls -lFA'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -297,7 +287,6 @@ export QT_QPA_PLATFORM=wayland-egl
 # export FREEGLUT="/home/artorias/Documents/School/cse/cse165/lab06/08_plot_graphical_objects"
 # export GRPPRJ="/home/artorias/Documents/School/cse/group_project"
 export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
-#export PATH="/home/artorias/.gem/ruby/2.2.0/bin":${PATH}
 export PATH=$PATH:$HOME/.local/bin
 export GPGKEY=08D77929
 
@@ -308,8 +297,4 @@ if [[ -f /opt/ros/indigo/setup.bash ]] && [[ -f $HOME/.config/ros/indigo_startup
     fi
     source $HOME/.config/ros/indigo_startup
 fi
-
-#if [[ $TERMINIX_ID ]]; then
-#        source /etc/profile.d/vte.sh
-#fi
 
