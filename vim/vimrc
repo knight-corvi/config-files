@@ -1,13 +1,13 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype off                  " required by Vundle
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'rust-lang/rust.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -26,6 +26,13 @@ set scrolloff=20
 set cursorline
 set laststatus=2
 set number
+set shiftwidth=4                                                        " Indetation size
+set tabstop=4                                                           " Tab indentaion
+set softtabstop=0
+set smarttab
+set autoindent
+set smartindent
+set expandtab
 " set textwidth=80
 let &colorcolumn=join(range(81,999),",")
 
@@ -52,3 +59,9 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
+"" NERDTree
+" open NERDTree automatically when vim starts up on opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" map a specific key or shortcut to open NERDTree
+map <C-n> :NERDTreeToggle<CR>
