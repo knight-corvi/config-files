@@ -34,12 +34,13 @@ set autoindent
 set smartindent
 set expandtab
 " set textwidth=80
-let &colorcolumn=join(range(81,999),",")
+" let &colorcolumn=join(range(81,999),",")
+let &colorcolumn=81
 
 " Appearance
 syntax enable
 set t_Co=256
-hi ColorColumn cterm=none ctermfg=none ctermbg=235
+hi ColorColumn cterm=none ctermfg=none ctermbg=236
 hi MatchParen  cterm=bold ctermfg=none ctermbg=none
 hi CursorLine  cterm=none ctermfg=none ctermbg=238
 
