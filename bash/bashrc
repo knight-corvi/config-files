@@ -5,6 +5,8 @@
 # ~/.bashrc
 #
 
+# xhost +SI:localuser:root
+
 if [[ $TERMINIX_ID ]]; then
         source /etc/profile.d/vte.sh
 fi
@@ -289,6 +291,11 @@ export QT_QPA_PLATFORM=wayland-egl
 export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
 export PATH=$PATH:$HOME/.local/bin
 export GPGKEY=08D77929
+
+# Style for Qt Apps
+# export QT_STYLE_OVERRIDE=adwaita
+# export QT_QPA_PLATFORMTHEME=gtk2
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 # source setup.bash for cse180 class Robotics
 if [[ -f /opt/ros/indigo/setup.bash ]] && [[ -f $HOME/.config/ros/indigo_startup ]]; then
