@@ -292,6 +292,11 @@ export PATH=$PATH:$HOME/.gem/ruby/2.2.0/bin
 export PATH=$PATH:$HOME/.local/bin
 export GPGKEY=08D77929
 
+if [ -f ~/.config/exercism/exercism_completion.bash ]; then
+    . ~/.config/exercism/exercism_completion.bash
+fi
+
+
 # Style for Qt Apps
 # export QT_STYLE_OVERRIDE=adwaita
 # export QT_QPA_PLATFORMTHEME=gtk2

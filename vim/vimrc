@@ -7,7 +7,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 " Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'cespare/vim-toml'
 Plugin 'rust-lang/rust.vim'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-scripts/gtk-vim-syntax'
 call vundle#end()
 
 filetype plugin indent on
@@ -40,7 +44,7 @@ let &colorcolumn=81
 " Appearance
 syntax enable
 set t_Co=256
-hi ColorColumn cterm=none ctermfg=none ctermbg=236
+hi ColorColumn cterm=none ctermfg=none ctermbg=238
 hi MatchParen  cterm=bold ctermfg=none ctermbg=none
 hi CursorLine  cterm=none ctermfg=none ctermbg=238
 
