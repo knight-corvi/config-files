@@ -272,7 +272,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR="gedit"
+export EDITOR="vim"
 if [[ -f /usr/bin/lesspipe  ]]; then
 	export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 elif [[ -f /usr/bin/lesspipe.sh ]]; then
