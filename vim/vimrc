@@ -12,13 +12,21 @@ Plugin 'cespare/vim-toml'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/gtk-vim-syntax'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+" Plugin 'elzr/vim-json'
+Plugin 'davidhalter/jedi-vim'
 call vundle#end()
 
 filetype plugin indent on
 " set background=dark
 let g:powerline_pycmd = 'py3'
 "colorscheme solarized"
-set  rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim"
+if has('mac')
+    set  rtp+=/usr/local/lib/python3.6/site-packages/powerline/bindings/vim"
+elseif has('unix')
+    set  rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim"
+endif
 
 set encoding=utf-8 fileencoding=utf-8 termencoding=utf-8
 set nobackup nowritebackup noswapfile autoread 				" no backup or swap
@@ -37,6 +45,10 @@ set smarttab
 set autoindent
 set smartindent
 set expandtab
+set list
+set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
+set incsearch   "find the next match as we type the search
+set hlsearch    "hilight searches by default
 
 " turn off search highlight
 noremap <leader><space> :nohlsearch<CR>
@@ -82,7 +94,32 @@ map <C-n> :NERDTreeToggle<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
+" let g:syntastic_python_checkers=["pycodestyle"]
+let g:syntastic_python_checkers=["flake8"]
+" Ignore some errors from flake8
+" E501 - line too long (# > 79 characters)
+" E302 - expected 2 blank lines, found # -> After function `def`
+" F811 - imported but not used
+" F401 - imported but not used
+" F403 - unable to detect undefined names
+" W291 - trailing whitespace
+" E231 - missing whitespace after ':'
+" E203 - whitespace before ','
+" E225 - missing whitespace around operator
+" W293 - blank line contains whitespace
+" E226 - missing whitespace around arithmetic operator
+" E701 - multiple statements on one line (colon)
+" E265 - block comment should start with '# '
+" E261 - at least two spaces before inline comment
+" E303 - too many blank lines
+" E266 - too many leading '#' for block comment
+" E262 - inline comment should start with '# '
+" E241 - multiple spaces after ','
+" E201 - whitespace after '['
+" E202 - whitespace after ']'
+" E211 - whitespace before '('
+" E305 - expected 2 blank lines after class or function definition, found 1
+" let g:syntastic_python_flake8_args="--ignore=E501,E302,F811,F401,F403,W291,E231,E203,E225,W293,E226,E701,E265,E261,E303,E266,E262,E241,E201,E202,E211,E305"
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1

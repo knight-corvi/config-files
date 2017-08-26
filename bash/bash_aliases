@@ -1,18 +1,22 @@
 # some more ls aliases
-alias ll='ls -XhlF'
-alias la='ls -XA'
-alias l='ls -1XF'
-alias lL='ls -lhXFA'
+if [[ "$(uname)" == "Darwin" ]]; then
+    alias ls='ls -G'
+fi
+alias ll='ls -hlF'
+alias la='ls -A'
+alias l='ls -1F'
+alias lL='ls -lhFA'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 
-alias rm='rm --interactive=always '
+# alias rm='rm --interactive=always '
 alias yousound='youtube-dl --extract-audio --audio-format="flac"'
 alias xopen='xdg-open '
 alias mc='mc --skin="/usr/share/mc/skins/xoria256.ini" '
 alias myip='wget -qO- http://ipecho.net/plain ; echo' 
 alias wgetdir='wget --no-parent --wait=10 --random-wait -e robots=off --mirror --recursive --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:48.0) Gecko/20100101 Firefox/48.0"'
 # alias matlab='matlab -nodesktop -nosplash '
+alias vim-phantom-ssh='vim scp://user@${ova_ip}//'

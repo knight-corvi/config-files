@@ -19,10 +19,14 @@ fi
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-if [[ "$(lsb_release -is)" == "Arch" ]]; then
-    source /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+if [[ "$(uname)" == "Darwin" ]]; then
+    source /usr/local/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 else
-    source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+    if [[ "$(lsb_release -is)" == "Arch" ]]; then
+        source /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
+    else
+        source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
+    fi
 fi
 
 
@@ -238,7 +242,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -X --color=auto'
+    alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -277,6 +281,8 @@ if [[ -f /usr/bin/lesspipe  ]]; then
 	export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 elif [[ -f /usr/bin/lesspipe.sh ]]; then
 	export LESSOPEN="|lesspipe.sh %s"
+elif [[ -f /usr/local/bin/lesspipe.sh ]]; then
+    export LESSOPEN="|/usr/local/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
 fi
 
 #statements
