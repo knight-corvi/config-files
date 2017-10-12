@@ -14,6 +14,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/gtk-vim-syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'mfukar/robotframework-vim'
 " Plugin 'elzr/vim-json'
 Plugin 'davidhalter/jedi-vim'
 call vundle#end()

@@ -20,6 +20,8 @@ powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 if [[ "$(uname)" == "Darwin" ]]; then
+    alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+    alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
     source /usr/local/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh
 else
     if [[ "$(lsb_release -is)" == "Arch" ]]; then
